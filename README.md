@@ -120,7 +120,6 @@ Top predictors:
 ### Selected Model
 **Random Forest Classifier**
 
-```python
 **Why Random Forest?**
 - ✅ Highest F1-Score (0.84)
 - ✅ Best balance between precision and recall
@@ -137,54 +136,66 @@ RandomForestClassifier(
     class_weight='balanced',
     random_state=42
 )
----
-##✨ Features
-**🎯 Core Functionality***
-1. Real-time Prediction
+```
 
+---
+
+## ✨ Features
+
+### 🎯 Core Functionality
+
+#### 1. Real-time Prediction
 - Input water quality parameters
 - Instant classification results
 - Confidence scores for each class
-2. Interactive Dashboard
 
+#### 2. Interactive Dashboard
 - 4 pages: Home, Predict, EDA, Models
 - Responsive design
 - Mobile-friendly interface
-- Exploratory Data Analysis
 
-3. Class distribution visualization
+#### 3. Exploratory Data Analysis
+- Class distribution visualization
 - Parameter distributions (pH, BOD, etc.)
 - Correlation heatmaps
-Geographic analysis
-Model Comparison
+- Geographic analysis
 
-Performance metrics table
-Visual model comparison
-Feature importance charts
-🔧 Technical Features
-Automatic Data Cleaning: Handles missing values, outliers
-Median Imputation: Fills missing data intelligently
-Feature Engineering: Creates derived features (oxygen stress, organic load)
-SMOTE Oversampling: Balances imbalanced classes
-Robust Validation: Stratified train-test split
-📱 Usage
-Running the Application
-Local Deployment
-bash
+#### 4. Model Comparison
+- Performance metrics table
+- Visual model comparison
+- Feature importance charts
+
+### 🔧 Technical Features
+- **Automatic Data Cleaning:** Handles missing values, outliers
+- **Median Imputation:** Fills missing data intelligently
+- **Feature Engineering:** Creates derived features (oxygen stress, organic load)
+- **SMOTE Oversampling:** Balances imbalanced classes
+- **Robust Validation:** Stratified train-test split
+
+---
+
+## 📱 Usage
+
+### Running the Application
+
+#### Local Deployment
+```bash
 # Navigate to project directory
 cd water-quality-classification
 
 # Start Streamlit app
 streamlit run app.py
-The app will open in your browser at http://localhost:8501
+```
+The app will open in your browser at `http://localhost:8501`
 
-Cloud Deployment (Streamlit Cloud)
-Push code to GitHub
-Go to share.streamlit.io
-Connect your GitHub repository
-Deploy with one click
-Using ngrok (Colab/Remote)
-bash
+#### Cloud Deployment (Streamlit Cloud)
+1. Push code to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect your GitHub repository
+4. Deploy with one click
+
+#### Using ngrok (Colab/Remote)
+```bash
 # Install ngrok
 pip install pyngrok
 
@@ -192,25 +203,152 @@ pip install pyngrok
 streamlit run app.py &
 
 # Create tunnel
-ngrok http 8501
-Application Workflow
-1. Home Page
-Read project overview
-Understand water quality classes
-Learn about the model
-2. Prediction Page
-Python
+grok http 8501
+```
+
+### Application Workflow
+
+#### 1. Home Page
+- Read project overview
+- Understand water quality classes
+- Learn about the model
+
+#### 2. Prediction Page
+```python
 # Input Parameters (Example: Clean River Water)
 pH = 7.5
 BOD = 3.2
-Dissolved O2 = 8.4
+Dissolved_O2 = 8.4
 COD = 15.0
 Conductivity = 320
 # ... (12 more parameters)
 
 # Click "Predict Water Quality"
 # Result: Class A - Drinking Water Source
-3. EDA Page
-Explore data distributions
-View correlation heatmaps
-Analyze geographic patterns
+```
+
+#### 3. EDA Page
+- Explore data distributions
+- View correlation heatmaps
+- Analyze geographic patterns
+
+#### 4. Models Page
+- Compare model performances
+- View feature importance
+- Understand classification metrics
+
+---
+
+## 🛠️ Installation
+
+### Prerequisites
+- Python 3.8 or higher
+- pip package manager
+
+### Setup Instructions
+```bash
+# Clone the repository
+git clone https://github.com/Ayush245101/Water-Quality-Classification.git
+cd Water-Quality-Classification
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application
+streamlit run app.py
+```
+
+### Required Dependencies
+```
+streamlit>=1.28.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+imbalanced-learn>=0.11.0
+```
+
+---
+
+## 📂 Project Structure
+```
+water-quality-classification/
+│
+├── app.py                          # Main Streamlit application
+├── NWMP_August2025_MPCB_0.csv     # Dataset
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation
+│
+├── models/
+│   └── random_forest_model.pkl    # Trained model
+│
+├── notebooks/
+│   ├── EDA.ipynb                  # Exploratory analysis
+│   └���─ Model_Training.ipynb       # Model development
+│
+└── utils/
+    ├── preprocessing.py            # Data cleaning functions
+    └── visualization.py            # Plotting utilities
+```
+
+---
+
+## 🎯 Key Results
+
+### Model Performance Summary
+- **Overall Accuracy:** 85%
+- **Macro F1-Score:** 0.84
+- **Training Time:** < 2 minutes
+- **Prediction Time:** < 1 second
+
+### Real-World Impact
+- **222+ monitoring stations** covered
+- **4 water quality classes** predicted
+- **15 critical parameters** analyzed
+- **Real-time predictions** enabled
+
+---
+
+## 🚀 Future Enhancements
+
+- [ ] Add temporal trend analysis
+- [ ] Integrate real-time data from IoT sensors
+- [ ] Expand to other Indian states
+- [ ] Implement deep learning models
+- [ ] Add mobile app version
+- [ ] Multi-language support (Marathi, Hindi)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👤 Author
+
+**Ayush**  
+GitHub: [@Ayush245101](https://github.com/Ayush245101)
+
+---
+
+## 🙏 Acknowledgments
+
+- **Maharashtra Pollution Control Board (MPCB)** for providing the dataset
+- **Scikit-learn** and **Streamlit** communities for excellent documentation
+- **SMOTE** technique by Chawla et al. for handling imbalanced data
+
+---
+
+## 📧 Contact
+
+For questions, suggestions, or collaboration:
+- Open an issue on GitHub
+- Connect via GitHub profile
+
+---
+
+**⭐ If you find this project useful, please consider giving it a star!**
