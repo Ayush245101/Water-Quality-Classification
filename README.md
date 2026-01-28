@@ -284,13 +284,11 @@ water-quality-classification/
 ├── models/
 │   └── random_forest_model.pkl    # Trained model
 │
-├── notebooks/
-│   ├── EDA.ipynb                  # Exploratory analysis
-│   └���─ Model_Training.ipynb       # Model development
-│
-└── utils/
-    ├── preprocessing.py            # Data cleaning functions
-    └── visualization.py            # Plotting utilities
+└── notebooks/
+   ├── EDA.ipynb                  # Exploratory analysis
+   └���─ Model_Training.ipynb       # Model development
+
+
 ```
 
 ---
