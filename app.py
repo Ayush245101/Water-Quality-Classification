@@ -33,28 +33,14 @@ model = load_model()
 # ----------------------------------
 # Raw Features (MUST MATCH TRAINING ORDER)
 # ----------------------------------
-# ----------------------------------
-# Raw Features with Safe Ranges
-# ----------------------------------
-FEATURE_INFO = {
-    "pH": {"range": "6.5–8.5", "unit": "", "description": "Acidity/alkalinity"},
-    "BOD": {"range": "<3", "unit": "mg/L", "description": "Organic pollution load"},
-    "Dissolved O2": {"range": ">5", "unit": "mg/L", "description": "Oxygen for aquatic life"},
-    "COD": {"range": "<10", "unit": "mg/L", "description": "Total organic matter"},
-    "Conductivity": {"range": "<1000", "unit": "μS/cm", "description": "Mineral content indicator"},
-    "Total Dissolved Solids": {"range": "<500", "unit": "mg/L", "description": "Mineral content"},
-    "Nitrate N": {"range": "<10", "unit": "mg/L", "description": "Agricultural runoff"},
-    "Phosphate": {"range": "<0.1", "unit": "mg/L", "description": "Nutrient pollution"},
-    "Chlorides": {"range": "<250", "unit": "mg/L", "description": "Salt content"},
-    "Sulphate": {"range": "<250", "unit": "mg/L", "description": "Mineral content"},
-    "Fecal Coliform": {"range": "<10", "unit": "MPN/100mL", "description": "Fecal contamination"},
-    "Total Coliform": {"range": "<50", "unit": "MPN/100mL", "description": "Bacterial contamination"},
-    "Fecal Streptococci": {"range": "<10", "unit": "CFU/100mL", "description": "Bacterial indicator"},
-    "Temperature": {"range": "10–30", "unit": "°C", "description": "Water temperature"},
-    "Turbidity": {"range": "<5", "unit": "NTU", "description": "Water cloudiness"}
-}
+RAW_FEATURES = [
+    "pH", "BOD", "Dissolved O2", "COD",
+    "Conductivity", "Total Dissolved Solids",
+    "Nitrate N", "Phosphate", "Chlorides", "Sulphate",
+    "Fecal Coliform", "Total Coliform", "Fecal Streptococci",
+    "Temperature", "Turbidity"
+]
 
-RAW_FEATURES = list(FEATURE_INFO.keys())
 df = load_data()
 
 # ----------------------------------
